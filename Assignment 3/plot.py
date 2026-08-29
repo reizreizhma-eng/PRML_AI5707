@@ -16,7 +16,7 @@ for degree in range(1, 11):
         predicted.append(y_pred)
     plt.subplot(2, 5, degree)
     plt.scatter(x_values,y_values,s=3)
-    plt.plot(x_values,predicted)
+    plt.plot(x_values,predicted,color="red")
     plt.title("Degree " + str(degree))
     plt.xlabel("x")
     plt.ylabel("y")
@@ -72,8 +72,8 @@ for degree in range(1, 11):
     )
 
 
-test_errors.append(test_error)
-validation_errors.append(validation_error)
+    test_errors.append(test_error)
+    validation_errors.append(validation_error)
 plt.figure(figsize=(8, 6))
 plt.plot(degrees,train_errors,marker="o",label="Training data MSE")
 plt.plot(degrees,test_errors,marker="o",label="Test data MSE")
